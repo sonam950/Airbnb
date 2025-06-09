@@ -1,0 +1,26 @@
+*{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+i.fa-solid.fa-compass {
+    color: #fe414f !important;
+}
+.card-img-top{
+    height: 20rem;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.5;
+    background-color: white;
+}
+.add-btn{
+    background-color: #fe414f !important;
+    color: white !important;
+}
+.card-img{
+    object-fit: cover;
+}

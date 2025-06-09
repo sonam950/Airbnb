@@ -1,0 +1,65 @@
+<% layout("/layouts/boilerplate")%>
+
+    <body>
+        <form method="POST" action="/listings" novalidate class="needs-validation" >
+            <div class="row ">
+                <div class="col-2"></div>
+
+
+                <div class="col-8 ">
+                    <h1 class="mt-2"> Create new listing</h1>
+
+                    <div>
+                        <label class="form-label mt-3" for="title">Enter title</label>
+                        <input class="form-control " name="name[title]" placeholder="Enter title" type="text" required>
+
+                    </div>
+                    <br>
+                    <div>
+                        <label class="form-label" for="description">Enter description</label>
+                        <textarea name="listing[description]" placeholder="Enter description" class="form-control"
+                            type="text" required>
+         </textarea>
+                    </div>
+                    <br>
+                    <div>
+                        <label class="form-label" for="image">Enter URL</label>
+                        <input name="listing[image]" placeholder="Enter iamge url/link" class="form-control"
+                            type="text">
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div>
+                                <label for="price" class="form-label">Enter Price</label>
+                                <input name="listing[price]" class="form-control" placeholder="Enter price"
+                                    type="number" required>
+
+                            </div>
+                            <br>
+                        </div>
+                        <br>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-7">
+                            <div>
+                                <label for="country" class="form-label"> Enter country </label>
+                                <input name="listing[country]" class="form-control" placeholder="Enter country"
+                                    type="text" required>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="location" class="form-label">ENter location</label>
+                        <input name="listing[location]" class="form-control" placeholder="Enter location" type="text" required>
+
+                    </div> <br>
+                    <button class=" btn py-2 px-3 add-btn">add</button>
+
+                </div>
+            </div>
+
+        </form>
+    </body>

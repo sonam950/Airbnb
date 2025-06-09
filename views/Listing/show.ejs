@@ -1,0 +1,63 @@
+<% layout("/layouts/boilerplate")%>
+
+    <body>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <h3>listing details</h3>
+
+                <div class="card border-0">
+                    <img class="card-img-top card-img rounded img-fluid" src="<%=listing.image.url%>"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%=listing.title%>
+                        </h5>
+                        <p class="card-text">
+                            <%=listing.description%><br>
+                                <strong>Price:</strong> $<%=listing.price%><br>
+                                    <strong>Location:</strong>
+                                    <%=listing.location%><br>
+                                        <strong>Country:</strong>
+                                        <%=listing.country%>
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center ">
+                    <a class="btn bg-dark text-light m-2 px-2 py-1" href="/listings/<%=listing._id%>/edit">Edit </a>
+
+                    <form method="POST" action="/listings/<%=listing._id%>/delete?_method=delete">
+                        <button class=" btn bg-dark text-light px-2 py-1">
+                            delete
+                        </button>
+                    </form>
+
+
+                </div>
+                <hr>
+                <div class="col-8 offset-2">
+                    <h4>Leave a review</h4>
+                    <form action="/listings/<%=listing._id%>/reviews" method="POST">
+                        <div>
+                            <label class="form-label" for="rating">Review</label>
+                            <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="review" rows="3"></input>    
+                        </div>
+                        <div>
+                            <label for="review">comment</label>
+                            <textarea class="form-control" type="text" row="10" cols="30" name="review[comment]" id="review" rows="3" required></textarea>
+                        </div>
+                        <button class="btn bg-dark text-light m-2 px-2 py-1" type="submit">Submit</button>
+                    </form>
+                    <hr>
+                   
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+    </body>

@@ -27,7 +27,7 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/", (req, res) => {
-    res.send("hello")
+    res.redirect("/listings");
 })
 const sessionOptions = {
   secret: 'thisShouldBeASecretKey', // 🔒 Change this in production
@@ -136,9 +136,9 @@ app.use((err, req, res, next) => {
     const { statusCode = 500, message = "Something went wrong" } = err;
     res.status(statusCode).send(message);
 }); 
+const port = process.env.PORT || 8080;
 
-
-app.listen(8080, () => {
+app.listen(port, () => {
     console.log("server is listenning")
     mongoose.connect(uri)
         .then(() => {
